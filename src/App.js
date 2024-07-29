@@ -5,8 +5,10 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Tutorial from './pages/Tutorial';
 import Explore from './pages/Explore';
+import CONFIG from './config';
 
 function App() {
+  console.log('Google_credentials:', CONFIG.Google_credentials);
   return (
     <Router>
       <Navbar />
