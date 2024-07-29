@@ -68,3 +68,63 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Cloudflare Pages
+
+## Setting up a new project
+
+```
+npm create cloudflare@latest <my-react-app> -- --framework=react
+```
+
+`create-cloudflare` will install dependencies, including the Wrangler CLI and the Cloudflare Pages adapter, and ask you setup questions.
+Go to the application’s directory:
+
+```
+cd <my-react-app>
+```
+
+From here you can run your application with:
+
+```
+npm start
+```
+
+## Create a GitHub repository
+
+```
+git remote add origin https://github.com/<your-gh-username>/<repository-name>
+git branch -M main
+git push -u origin main
+```
+
+## Deploy with Cloudflare Pages
+
+### Deploy via the Cloudflare dashboard
+1. Log in to the Cloudflare dashboard and select your account.
+2. In Account Home, select Workers & Pages > Create application > Pages > Connect to Git.
+3. Select the new GitHub repository that you created and, in the Set up builds and deployments section, provide the following information:
+<table>
+  <tr>
+    <th>Configuration option</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Production branch</td>
+    <td>main</td>
+  </tr>
+  <tr>
+    <td>Build command</td>
+    <td>npm run build</td>
+  </tr>
+  <tr>
+    <td>Build directory</td>
+    <td>build</td>
+  </tr>
+</table>
+
+## dependencies
+```
+npm install react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material
+npm install @google-cloud/vertexai
+```
