@@ -101,6 +101,7 @@ git push -u origin main
 ## Deploy with Cloudflare Pages
 
 ### Deploy via the Cloudflare dashboard
+
 1. Log in to the Cloudflare dashboard and select your account.
 2. In Account Home, select Workers & Pages > Create application > Pages > Connect to Git.
 3. Select the new GitHub repository that you created and, in the Set up builds and deployments section, provide the following information:
@@ -124,6 +125,7 @@ git push -u origin main
 </table>
 
 ## dependencies
+
 ```
 npm install react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material
 npm install @google-cloud/vertexai
