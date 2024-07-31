@@ -128,5 +128,5 @@ git push -u origin main
 
 ```
 npm install react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material
-npm install @google-cloud/vertexai
+<!-- npm install @google-cloud/vertexai -->
 ```
