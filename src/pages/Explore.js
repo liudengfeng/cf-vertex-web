@@ -27,15 +27,15 @@ function Explore() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // const request = {
-        //     contents: [
-        //         { role: "user", parts: [{ text: prompt }] }
-        //     ]
-        // }
+        const request = {
+            contents: [
+                { role: "user", parts: [{ text: prompt }] }
+            ]
+        }
         try {
             // const result = await vertex_ai.generatedContent(request);
-            const credentials = JSON.parse(process.env.REACT_APP_CREDENTIALS);
-            setGeneratedContent(JSON.stringify(credentials));
+            // const credentials = JSON.parse(process.env.REACT_APP_CREDENTIALS);
+            setGeneratedContent(JSON.stringify(request));
         } catch (error) {
             console.error('Error generating text:', error);
             setGeneratedContent('Error generating text.');
