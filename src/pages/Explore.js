@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { fetchVertexToken } from './../utils.js';
 // const { VertexAI } = require('@google-cloud/vertexai');
 
 // const project = "enzh-428519";
@@ -24,23 +25,32 @@ function Explore() {
     const handleInputChange = (event) => {
         setPrompt(event.target.value);
     };
-
+    const handleFetchToken = async () => {
+        try {
+            const result = await fetchVertexToken();
+            setGeneratedContent(JSON.stringify(result));
+        } catch (error) {
+            console.error('Error fetching token:', error);
+            setGeneratedContent('Error fetching token');
+        }
+    };
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const request = {
-            contents: [
-                { role: "user", parts: [{ text: prompt }] }
-            ]
-        }
+        // const request = {
+        //     contents: [
+        //         { role: "user", parts: [{ text: prompt }] }
+        //     ]
+        // }
         try {
             // const result = await vertex_ai.generatedContent(request);
             // const credentials = JSON.parse(process.env.REACT_APP_CREDENTIALS);
-            setGeneratedContent(JSON.stringify(request));
+            handleFetchToken();
         } catch (error) {
             console.error('Error generating text:', error);
             setGeneratedContent('Error generating text.');
         }
     };
+
     return (
         <div>
             <h1>Explore Page</h1>
